@@ -1,8 +1,8 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: argocd-server-http-ingress
-  namespace: argocd
+  name: argo-server-http-ingress
+  namespace: argo
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
     kubernetes.io/ingress.class: "nginx"
@@ -14,10 +14,10 @@ spec:
   - http:
       paths:
       - backend:
-          serviceName: argoc-server
+          serviceName: argo-server
           servicePort: http
     host: argo.{{.Values.domain}}
   tls:
   - hosts:
-    - argocd.{{.Values.domain}}
+    - argo.{{.Values.domain}}
     secretName: argocd-secret # do not change, this is provided by Argo CD
