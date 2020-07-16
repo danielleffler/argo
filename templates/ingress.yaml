@@ -15,9 +15,9 @@ spec:
       paths:
       - backend:
           serviceName: argo-server
-          servicePort: http
+          servicePort: web
     host: argo.{{.Values.domain}}
   tls:
   - hosts:
     - argo.{{.Values.domain}}
-    secretName: argocd-secret # do not change, this is provided by Argo CD
+    secretName: argo-secret # do not change, this is provided by Argo CD
