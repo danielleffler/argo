@@ -1,1 +1,2 @@
 domain: codezen.com.au
+whitelist_cidr: 111.220.138.145/24
